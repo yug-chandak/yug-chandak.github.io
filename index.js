@@ -2,6 +2,35 @@
 $(document).ready(function () {
 
 
+  // Particle BG using jquery plugin
+
+  $('#site-landing').polygonizr();
+  $('#site-landing').polygonizr({
+    numberOfNodes: 30,
+    nodeEase: 'linear',
+    nodeLineColor: "255,105,180",
+  
+    nodeFillColor: "255,182,193"
+});
+$(window).resize(function () {
+  let $sitelading = $('#site-landing');
+  $sitelading.polygonizr("stop");
+
+  // Update polygonizr with the new window size.
+  $sitelading.polygonizr({
+      canvasHeight: $(this).height(),
+      canvasWidth: $(this).width()
+  });
+
+  $sitelading.polygonizr("refresh");
+});
+
+
+
+
+
+
+
   //Navbar scroll hide effect code below
 
   var c, currentScrollTop = 0,
